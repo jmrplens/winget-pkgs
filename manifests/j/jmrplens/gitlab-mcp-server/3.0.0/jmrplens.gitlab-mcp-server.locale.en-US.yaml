@@ -1,0 +1,132 @@
+# Created with WinGet Releaser using komac v2.16.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.12.0.schema.json
+
+PackageIdentifier: jmrplens.gitlab-mcp-server
+PackageVersion: 3.0.0
+PackageLocale: en-US
+Publisher: José M. Requena Plens
+PublisherUrl: https://github.com/jmrplens
+PublisherSupportUrl: https://github.com/jmrplens/gitlab-mcp-server/issues
+PrivacyUrl: https://github.com/jmrplens/gitlab-mcp-server/blob/main/PRIVACY.md
+PackageName: GitLab MCP Server
+PackageUrl: https://github.com/jmrplens/gitlab-mcp-server
+License: MIT
+LicenseUrl: https://github.com/jmrplens/gitlab-mcp-server/blob/HEAD/LICENSE
+ShortDescription: GitLab MCP server exposing the REST v4 and GraphQL APIs as tools for AI assistants.
+Description: A Model Context Protocol (MCP) server that connects AI assistants (Claude, Cursor, VS Code + Copilot, and any MCP client) to GitLab.com or self-managed GitLab instances. Covers the full REST API v4 and GraphQL with automatic edition gating, roughly 850 to 1080 tools depending on the GitLab tier, plus 45 MCP resources, 37 prompts, argument completions, progress notifications and resource subscriptions. Single static binary, stdio and HTTP transports, read-only and safe (mutation-preview) modes, and per-client configuration examples in the documentation.
+Moniker: gitlab-mcp-server
+Tags:
+- ai
+- ci-cd
+- claude
+- devops
+- gitlab
+- graphql
+- llm
+- mcp
+- model-context-protocol
+- rest-api
+ReleaseNotes: |-
+  Changelog
+  ✨ Features
+  - b771c05: feat!: remove what v2 deprecated, minus the one window that never opened (#641) (@jmrplens)
+  - e9626df: feat(achievements): take the avatar upload, and judge the GraphQL documents that carry a file (#592) (@jmrplens)
+  - 0664a28: feat(apiexposes): pin the condition GitLab sends each REST entity field under (#622) (@jmrplens)
+  - 73b04d3: feat(audit): add R-PATH, the dimension that reads the request rather than the surface (#598) (@jmrplens)
+  - bf04b77: feat(audit): ask a booted GitLab what its own REST API is (#650) (@jmrplens)
+  - d6993c0: feat(audit): ask the sent question of GraphQL, where nothing asked it (#648) (@jmrplens)
+  - 0b23a9e: feat(audit): check the prose a meta-tool serves against the parameters it takes (#590) (@jmrplens)
+  - f8f8f9c: feat(audit): judge every GraphQL decoder against the document it decodes (#621) (@jmrplens)
+  - ca4d86a: feat(audit): pin what GitLab says its own API returns, from the document GitLab generates (#599) (@jmrplens)
+  - de07060: feat(audit): read the SDK's enum values instead of trusting the field (#527) (@jmrplens)
+  - be21f5e: feat(audit): report the output fields GitLab's own document says it does not send (#585) (@jmrplens)
+  - b62edb0: feat(audit): say which sent findings belong upstream in client-go (#654) (@jmrplens)
+  - b244e41: feat(audit_1to1): ask the shape check at type grain, and adjudicate what it found (#589) (@jmrplens)
+  - cb452bd: feat(bench): measure and publish what the server costs to run (#463) (@jmrplens)
+  - 80245f6: feat(bench): measure whether a bound leaves the quiet tenant better off (#597) (@jmrplens)
+  - 5492f2b: feat(bench): step one process up to a thousand credentials, with a profile at every step (#534) (@jmrplens)
+  - b2c4bdd: feat(catalog): declare the documented value sets as schema enums (#494) (@jmrplens)
+  - 13371b5: feat(catalog): embed the canonical resource of every get action again (#503) (@jmrplens)
+  - 735329d: feat(config): prefix every server variable with GITLAB_MCP_, the GITLAB_ switches included (#523) (@jmrplens)
+  - 124f103: feat(dependencyfirewall): expose the Dependency Firewall evaluate endpoint (#451) (@jmrplens)
+  - 36089b8: feat(epics): expose what the Work Items API offers an epic, and publish only what GitLab sends (#593) (@jmrplens)
+  - 764a12f: feat(gen_testing_docs): pass -timeout through, refresh testing.md, gate it in CI (#441) (@jmrplens)
+  - 1c5edb7: feat(geo): publish what a Geo site and its status send, declare the matrix (#665) (@jmrplens)
+  - 6befc45: feat(gitlab): read a field client-go does not model from the captured response (#625) (@jmrplens)
+  - 677e1db: feat(graphql): judge every document against the schema an instance serves today (#579) (@jmrplens)
+  - 476f7ad: feat(graphql): make the mocks refuse what GitLab refuses, and fix the nine tools that proved (#575) (@jmrplens)
+  - 04e5284: feat(http): believe the client-address header only from listed proxies (#480) (@jmrplens)
+  - 97132dc: feat(http): meter tools/list on a bucket of its own (#566) (@jmrplens)
+  - e5402d3: feat(http): report draining on /health and fingerprint the served configuration (#487) (@jmrplens)
+  - f34c38a: feat(members): read what client-go's member structs do not carry off the captured response (#628) (@jmrplens)
+  - 57bfc35: feat(mergerequests): publish 15 fields and declare 34 the server never asks for (#668) (@jmrplens)
+  - 6a334cc: feat(notes): read what client-go does not model off the captured response, and publish only what GitLab sends (#626) (@jmrplens)
+  - 397c61a: feat(npm): install via npx with a per-platform binary wrapper (#323) (@jmrplens)
+  - 22e7650: feat(release): harden the whole release chain for a definitive 2.7.6 (#326) (@jmrplens)
+  - 11a3a2e: feat(release): ship the server on NuGet as a .NET tool (#526) (@jmrplens)
+  - 87e8f3e: feat(security)!: confirm push-mirror creation and filter the catalog by token scope (#673) (@jmrplens)
+  - 67f63e5: feat(security)!: refuse outbound destinations the operator did not choose (#676) (@jmrplens)
+  - 072ea7a: feat(server): probe the listener the server actually has, as the image's health check (#481) (@jmrplens)
+  - ab686b9: feat(serverpool): say which eviction happened, and bound watchers across the process (#577) (@jmrplens)
+  - 87334ad: feat(stdio): serve a read_api token the read-only surface, as HTTP does (#505) (@jmrplens)
+  - 81b6aac: feat(surface): read the six response fields client-go declares no member for (#629) (@jmrplens)
+  - 7733804: feat(tokens): read the granular, impersonation and resource fields no token struct carries (#630) (@jmrplens)
+  - 679a1bd: feat(tooling): gate the Markdown escaping rule, and fix everything it found (#594) (@jmrplens)
+  - fcf3469: feat(tools): publish 15 member-family fields and declare 9 GitLab never sends (#664) (@jmrplens)
+  - b8f7001: feat(tools): publish 36 fields GitLab sends across six packages (#661) (@jmrplens)
+  - 04d2225: feat(tools): publish the tail of the fields GitLab sends and we dropped (#656) (@jmrplens)
+  - 03a11e3: feat(users): publish 45 fields and declare 19 the route set cannot send (#670) (@jmrplens)
+  - bc47d37: feat(workitems): expose every filter and widget client-go carries, and the objects behind them (#591) (@jmrplens)
+  - cd541e9: feat: update client-go to v2.64.0 and expose the achievements service it brought (#560) (@jmrplens)
+  🐛 Bug Fixes
+  - a3dcafc: fix(audit): compare against an SDK struct that tags nothing, instead of reporting all of it as ours (#582) (@jmrplens)
+  - 0adc6f0: fix(audit): judge a type named as a field when a converter pairs it (#646) (@jmrplens)
+  - c4f60bb: fix(audit): read a merged Grape exposure as the keys it contributes (#655) (@jmrplens)
+  - 8c1df8c: fix(audit_1to1): read a reopened Ruby class, promote embeds, nest through any struct, annotate per field (#623) (@jmrplens)
+  - f22a164: fix(bench): measure what a credential costs to hold, not only to serve (#544) (@jmrplens)
+  - 041bd02: fix(config): say 3.1.0, not v3, as the release that drops the old variable names (#680) (@jmrplens)
+  - 4f512cb: fix(e2e): build the dynamic catalog the way the server does, and read a preview as the error it is (#475) (@jmrplens)
+  - febc960: fix(epicissues): move the child under its parent the way GitLab accepts (#606) (@jmrplens)
+  - 9ec1020: fix(eval): give the thirteen colliding evaluator cases their own identifiers (#433) (@jmrplens)
+  - 9c5cc8d: fix(http): conform to the authorization and transport specifications, and refresh dependency pins (#328) (@jmrplens)
+  - 867be65: fix(http): make the OAuth surface honest, and admit read-only credentials (#324) (@jmrplens)
+  - a64cc44: fix(http): refuse the free-instance hatch on a listener anyone can reach (#645) (@jmrplens)
+  - 0f08072: fix(markdown): size every hand-written code fence to its body, and gate the class (#677) (@jmrplens)
+  - 8d4e520: fix(mcp): a tool call could kill the server, and subscriptions were dead by default (#334) (@jmrplens)
+  - acb3b16: fix(mcp): conform to the server-surface specifications (#333) (@jmrplens)
+  - 76c6aa1: fix(mrapprovals): publish the four fields GitLab answers with, not the deprecated POST's twenty-four (#586) (@jmrplens)
+  - d4b0fdb: fix(oauth): conform to the three authorization sub-pages, and keep the raw token out of the identity cache (#532) (@jmrplens)
+  - dc19efb: fix(oauth): refuse unverified TLS, and stop calling an unadmitted token invalid (#331) (@jmrplens)
+  - 07b9e86: fix(oauth): serve the protected-resource document only on its derived path (#456) (@jmrplens)
+  - 32b2545: fix(pagination): page backwards where GitLab allows it, and stop advertising it where it does not (#595) (@jmrplens)
+  - 52841e9: fix(projects): answer a project with no push rules instead of dereferencing nil (#605) (@jmrplens)
+  - da29181: fix(quality): clear the five open Sonar findings (#671) (@jmrplens)
+  - 482b5ec: fix(registry): declare the real .mcpb bundle and the container image (#325) (@jmrplens)
+  - 4080bfb: fix(security): finish the fixes that stopped at another file (#486) (@jmrplens)
+  - b6b339b: fix(security): read the line numbers GitLab sends as the strings they are (#609) (@jmrplens)
+  - 7e68e80: fix(serverpool): refuse an unnamed instance in the resolver, not only at the server's gate (#479) (@jmrplens)
+  - 8dc7ac8: fix(site): pin js-yaml past the advisory the current pin is vulnerable to (#652) (@jmrplens)
+  - 9c7ab1e: fix(test): defer every committed-artifact comparison, not just the snapshots (#669) (@jmrplens)
+  - c6b4e21: fix: green the Windows leg, and the stale-socket bug it exposed (#455) (@jmrplens)
+  - f72696a: fix: serve a proxied host, bound what a find call costs, and search the catalog (#554) (@jmrplens)
+  - bf88dd0: fix: two known failures at the cause, not at the symptom (#444) (@jmrplens)
+  ⚡ Performance
+  - bb9f87f: perf(pool): share the catalog, its schemas, the dynamic index and the manifest across pool entries (#535) (@jmrplens)
+  - e7fd201: perf(server): build one MCP server per configuration shape, not per credential (#537) (@jmrplens)
+  📚 Documentation
+  - ec71501: docs(agents): hold the Test Expert and the coverage skill to the 100% rule (#516) (@jmrplens)
+  - e862166: docs(bench): publish the measured record and size by callers, not by tokens (#547) (@jmrplens)
+  - 06669c3: docs(deployment): a remote deployment guide, with the balancing answer (#457) (@jmrplens)
+  - 9946ab5: docs(eval): give the CE meta-tools results a block to publish into (#502) (@jmrplens)
+  - c29e44a: docs(gates): make the CI-gate record and the gates agree (#618) (@jmrplens)
+  - e9d075f: docs(go): keep every package comment in a doc.go of its own (#506) (@jmrplens)
+  - 1a93119: docs(go): keep file comments out of the package documentation (#500) (@jmrplens)
+  - cdcde0d: docs(guides): add the enterprise deployment section, and fix the four defects writing it found (#546) (@jmrplens)
+  - 6680d4a: docs(http): say where the metadata lives for each deployment shape (#452) (@jmrplens)
+  - 0d021a7: docs(perf): publish the current measurement only, in sections of its own (#551) (@jmrplens)
+ReleaseNotesUrl: https://github.com/jmrplens/gitlab-mcp-server/releases/tag/v3.0.0
+Documentations:
+- DocumentLabel: Documentation
+  DocumentUrl: https://jmrp.io/docs/gitlab-mcp-server/
+ManifestType: defaultLocale
+ManifestVersion: 1.12.0
