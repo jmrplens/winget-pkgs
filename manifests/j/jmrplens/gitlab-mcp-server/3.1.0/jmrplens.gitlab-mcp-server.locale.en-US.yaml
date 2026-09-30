@@ -1,0 +1,136 @@
+# Created with WinGet Releaser using komac v2.16.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.12.0.schema.json
+
+PackageIdentifier: jmrplens.gitlab-mcp-server
+PackageVersion: 3.1.0
+PackageLocale: en-US
+Publisher: José M. Requena Plens
+PublisherUrl: https://github.com/jmrplens
+PublisherSupportUrl: https://github.com/jmrplens/gitlab-mcp-server/issues
+PrivacyUrl: https://github.com/jmrplens/gitlab-mcp-server/blob/main/PRIVACY.md
+PackageName: GitLab MCP Server
+PackageUrl: https://github.com/jmrplens/gitlab-mcp-server
+License: MIT
+LicenseUrl: https://github.com/jmrplens/gitlab-mcp-server/blob/HEAD/LICENSE
+ShortDescription: GitLab MCP server exposing the REST v4 and GraphQL APIs as tools for AI assistants.
+Description: A Model Context Protocol (MCP) server that connects AI assistants (Claude, Cursor, VS Code + Copilot, and any MCP client) to GitLab.com or self-managed GitLab instances. Covers the full REST API v4 and GraphQL with automatic edition gating, roughly 850 to 1080 tools depending on the GitLab tier, plus 45 MCP resources, 37 prompts, argument completions, progress notifications and resource subscriptions. Single static binary, stdio and HTTP transports, read-only and safe (mutation-preview) modes, and per-client configuration examples in the documentation.
+Moniker: gitlab-mcp-server
+Tags:
+- ai
+- ci-cd
+- claude
+- devops
+- gitlab
+- graphql
+- llm
+- mcp
+- model-context-protocol
+- rest-api
+ReleaseNotes: |-
+  Changelog
+  ✨ Features
+  - b744f34: feat!: read every setting under its prefixed name and no other (#807) (@jmrplens)
+  - 6bac542: feat(1:1): publish the three clean sent-field blocks, and give memberroles a context (#685) (@jmrplens)
+  - 9798d14: feat(1to1): R-PAGE, the dimension that asks whether a list says where it ends (#719) (@jmrplens)
+  - eb67d88: feat(audit): the e2e coverage command, credited from what the server dispatched (#728) (@jmrplens)
+  - 3d777c9: feat(audit): two gates for the card shape, reporting what the migration owes (#712) (@jmrplens)
+  - 6379aba: feat(e2e): call the real server by canonical action ID on every surface (#724) (@jmrplens)
+  - 71d7812: feat(e2e): declare the call record the rebuilt suite writes and the audit reads (#722) (@jmrplens)
+  - 6bbaaab: feat(e2e): measure the server binary in the transport modules (#771) (@jmrplens)
+  - 64343ca: feat(e2e): record what the old suite drives, and the two baselines it produces (#732) (@jmrplens)
+  - 76c611d: feat(e2e): record what the server dispatched, not what the test asked for (#725) (@jmrplens)
+  - 9c8d44d: feat(e2e): start the real server from a harness that probes before it writes (#723) (@jmrplens)
+  - 35e00d2: feat(e2e): the fixture library, with the shared World and the run-scoped sweep (#729) (@jmrplens)
+  - 015a351: feat(e2e): the runtime packages, their first tests on the real binary, and a non-blocking CI job (#733) (@jmrplens)
+  - fbe86dc: feat(eval): stop publishing, tell the truth about the numbers, and measure the prompt leak (#772) (@jmrplens)
+  - f3bad2f: feat(http): publish an ETag on the three unauthenticated documents (#694) (@jmrplens)
+  - 41b95a8: feat(http): serve the SEP-2127 card at /server-card, the catalog at the legacy path (#692) (@jmrplens)
+  - 0a488d5: feat(modeleval): build the Free worlds a case runs in, one recipe at a time (#800) (@jmrplens)
+  - 9290d77: feat(modeleval): call a model, and hash exactly what was sent (#799) (@jmrplens)
+  - 55fe5c9: feat(modeleval): decide what an attempt was worth, from the record alone (#798) (@jmrplens)
+  - f484278: feat(modeleval): declare what one run writes down, before anything writes it (#785) (@jmrplens)
+  - f55be12: feat(modeleval): finish the corpus, and write down what the move left behind (#794) (@jmrplens)
+  - c892584: feat(modeleval): hold a case's answer where nothing that asks it can read (#792) (@jmrplens)
+  - 6d01453: feat(modeleval): publish a measurement only when it can say what it measured (#804) (@jmrplens)
+  - 737e701: feat(modeleval): put the corpus to a model and write down what happened (#803) (@jmrplens)
+  - aba93c3: feat(modeleval): raise the world every case runs in, licensed half included (#801) (@jmrplens)
+  - 34893e1: feat(modeleval): send a model's own call and say what the server ran (#797) (@jmrplens)
+  - 7ce34e7: feat(modeleval): show a model the slice of the catalog it can be given (#806) (@jmrplens)
+  - 874fd3f: feat(release): attest the container image on both registries, and declare Docker Hub (#684) (@jmrplens)
+  - a036dcd: feat(tenancy): bound tools/list across the process (RTC-007) (#1046) (@jmrplens)
+  - 726f26c: feat(toolutil): add the one card writer and the value vocabulary it needs (#709) (@jmrplens)
+  🐛 Bug Fixes
+  - 0249c8d: fix(1to1): stop advertising thirteen fields that can never be filled (#696) (@jmrplens)
+  - 8a006be: fix(1to1): stop publishing ten fields no Grape entity exposes (#695) (@jmrplens)
+  - 7066112: fix(audit): make one rule decide what a GraphQL document is (#769) (@jmrplens)
+  - 6407369: fix(bench): draw the benchmark charts so a reader can read them (#795) (@jmrplens)
+  - 93d7500: fix(bench): survive a port lost between reserving it and the child binding it (#793) (@jmrplens)
+  - 3744f9f: fix(build): stop a failed recording reading as a fresh inventory (#770) (@jmrplens)
+  - 3267f05: fix(docs): check the anchor half of every documentation link (#788) (@jmrplens)
+  - 0bf10e9: fix(gitlab): keep a pinned tier through the lazy re-initialization (#1052) (@jmrplens)
+  - f8a3bbd: fix(http): a blocked address still serves a credential already admitted (#789) (@jmrplens)
+  - 85a30d2: fix(identity): check the canonical document is a Person before using it (#764) (@jmrplens)
+  - a8e73ce: fix(markdown): link only an http address, and carry a backslashed pipe as text (#721) (@jmrplens)
+  - a9f4194: fix(mergerequests): read the merge request back when a cancelled auto-merge answers without one (#752) (@jmrplens)
+  - 8adba88: fix(meta): stop an alias from rewriting an action the tool routes (#700) (@jmrplens)
+  - 26d6aeb: fix(model-results): merge a re-run case by case, and let a report be rehearsed (#809) (@jmrplens)
+  - 6b4cf9c: fix(model-results): refuse the two merges that would publish one label over two measurements (#812) (@jmrplens)
+  - 549c49f: fix(notifications): refuse a level the update scope does not accept (#852) (@jmrplens)
+  - 5f0d1dc: fix(oauth): advertise one scope, so a client asks GitLab for one (#705) (@jmrplens)
+  - 4d73bc0: fix(release): sign and attest the image outside the job that builds it (#689) (@jmrplens)
+  - a7d7c5b: fix(releaselinks): stop promising a field GitLab does not send (#853) (@jmrplens)
+  - 663fad3: fix(repository): echo the archive subdirectory back to the caller (#855) (@jmrplens)
+  - 534d12d: fix(server): drop a failed shape before its refusal reaches the caller (#768) (@jmrplens)
+  - 441bd3b: fix(settings): publish GitLab's answer and refuse an unsendable patch (#854) (@jmrplens)
+  - e4aa7c1: fix(telemetry): name the action a dispatcher ran, and count individual safe-mode previews (#706) (@jmrplens)
+  - 28b0203: fix(telemetry): name the action on the first call a process serves (#816) (@jmrplens)
+  - 2f74572: fix(telemetry): name the action registration bound to an individual tool (#701) (@jmrplens)
+  - 9ae164b: fix(test): give the polling-transition test a budget two polls fit in (#686) (@jmrplens)
+  - ca49017: fix(test-tooling): give a mutant a timeout it can survive being started in (#813) (@jmrplens)
+  - 7ebcc61: fix(tools): stop rendering credentials in tool Markdown (#708) (@jmrplens)
+  - 856a0a6: fix: three published claims the code stopped making, and a decoder that accepted an ambiguous identity (#805) (@jmrplens)
+  ⚡ Performance
+  - 4098b13: perf(tests): cut a quarter off the unit suite and close every coverage gap (#811) (@jmrplens)
+  📚 Documentation
+  - df52b3a: docs(1to1): declare the 49 project-group fields as a wrong route annotation (#688) (@jmrplens)
+  - 706f74b: docs(adr-0018): correct what publishes the catalog, and pin the citation (#691) (@jmrplens)
+  - 7848eb4: docs(eval): withdraw the published model numbers (#783) (@jmrplens)
+  - 7db1440: docs(oauth): check read_api beside api on a writable deployment's application (#702) (@jmrplens)
+  - c95f436: docs(upstream): go-sdk 1273 is merged, and not yet in a release (#814) (@jmrplens)
+  - 890a089: docs(upstream): record the go-sdk batch and the auto-merge cancel annotation (#753) (@jmrplens)
+  - 8588a08: docs(upstream): record the go-sdk findings and correct the auto-merge entry (#784) (@jmrplens)
+  - 46be989: docs(upstream): record the merge requests that landed and the versions carrying them (#681) (@jmrplens)
+  - c613692: docs(upstream): record the two client-go merges and the page merge, and give six entries their summary rows (#739) (@jmrplens)
+  - 0995293: docs(upstream): record three GitLab endpoints that declare a response they do not send (#682) (@jmrplens)
+  - 4da8537: docs: retire the deleted e2e suite from the documents that still ran it, and sweep the dependencies (#767) (@jmrplens)
+  🚧 Maintenance
+  - e7ae118: Answer the rework verdicts the mutation round left open (#818) (@jmrplens)
+  - 8d253ce: Ask the discovery audit a parameter-guidance question that can fire (#856) (@jmrplens)
+  - 9606d79: Bind every template the server registers, and credit only what it acknowledges (#925) (@jmrplens)
+  - 5e9388f: Bound the OAuth identity cache and the round trips that verify a new token (#1087) (@jmrplens)
+  - 73a0bd7: Bound the calls the process holds open at once, sized by its descriptor limit (#1088) (@jmrplens)
+  - b174740: Bound the stateful sessions the process keeps, and reserve each one's stream when it opens (#1089) (@jmrplens)
+  - 93ced00: Close four request gaps: broadcast color, appearance site name, bulk publish options, service account get (#1010) (@jmrplens)
+  - 0add077: Close the Markdown card sweep: both staged rules now gate (#895) (@jmrplens)
+  - 3329276: Close the conditions the action-ID audit never evaluated both ways (#894) (@jmrplens)
+  - 08a0f72: Close the gate on the 15 tools domains the quota cut off (batch 2b) (#829) (@jmrplens)
+  - e4fe114: Close the invisible pairs batch 4 left open, in sixteen packages (#891) (@jmrplens)
+  - 89c1912: Close the mutation and condition gate on 29 more tools domains (batch 2) (#827) (@jmrplens)
+  - 7f96a54: Close the mutation and condition gate on 46 tools domains (batch 1 of 4) (#823) (@jmrplens)
+  - 306b6e5: Close the mutation and condition gate on the last 42 tools domains (batch 2 tail) (#832) (@jmrplens)
+  - 0d4ada4: Close the mutation and condition gate on the rest of internal/ (#820) (@jmrplens)
+  - c2a52b3: Close the mutation and condition gates on 51 more tool packages, and the swaps no fixture could see (#867) (@jmrplens)
+  - f306fed: Close the mutation and condition gates on eleven shared packages (#886) (@jmrplens)
+  - 4725de0: Close the mutation and condition gates on five generators (#979) (@jmrplens)
+  - efdde8e: Close the mutation and condition gates on six shared packages (#980) (@jmrplens)
+  - 164bdcb: Close the mutation and condition gates on sixteen audit commands (#884) (@jmrplens)
+  - 9627e3c: Close the mutation and condition gates on ten generators (#885) (@jmrplens)
+  - e6483d6: Close the mutation and condition gates on the last sixteen tool packages (#868) (@jmrplens)
+  - f365ba8: Close the mutation and condition gates on twelve audit commands (#978) (@jmrplens)
+  - 048501c: Close the mutation and condition gates on twenty repository commands (#871) (@jmrplens)
+ReleaseNotesUrl: https://github.com/jmrplens/gitlab-mcp-server/releases/tag/v3.1.0
+Documentations:
+- DocumentLabel: Documentation
+  DocumentUrl: https://jmrp.io/docs/gitlab-mcp-server/
+ManifestType: defaultLocale
+ManifestVersion: 1.12.0
