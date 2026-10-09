@@ -1,0 +1,129 @@
+# Created with komac v2.16.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.12.0.schema.json
+
+PackageIdentifier: jmrplens.gitlab-mcp-server
+PackageVersion: 3.2.0
+PackageLocale: en-US
+Publisher: José M. Requena Plens
+PublisherUrl: https://github.com/jmrplens
+PublisherSupportUrl: https://github.com/jmrplens/gitlab-mcp-server/issues
+PrivacyUrl: https://github.com/jmrplens/gitlab-mcp-server/blob/main/PRIVACY.md
+PackageName: GitLab MCP Server
+PackageUrl: https://github.com/jmrplens/gitlab-mcp-server
+License: MIT
+LicenseUrl: https://github.com/jmrplens/gitlab-mcp-server/blob/HEAD/LICENSE
+ShortDescription: GitLab MCP server exposing the REST v4 and GraphQL APIs as tools for AI assistants.
+Description: A Model Context Protocol (MCP) server that connects AI assistants (Claude, Cursor, VS Code + Copilot, and any MCP client) to GitLab.com or self-managed GitLab instances. Covers the full REST API v4 and GraphQL with automatic edition gating, roughly 850 to 1080 tools depending on the GitLab tier, plus 45 MCP resources, 37 prompts, argument completions, progress notifications and resource subscriptions. Single static binary, stdio and HTTP transports, read-only and safe (mutation-preview) modes, and per-client configuration examples in the documentation.
+Moniker: gitlab-mcp-server
+Tags:
+- ai
+- ci-cd
+- claude
+- devops
+- gitlab
+- graphql
+- llm
+- mcp
+- model-context-protocol
+- rest-api
+ReleaseNotes: |-
+  Changelog
+  🚧 Maintenance
+  - 4656ffb: Admit legacy HTTP tokens at the read_api minimum, uncharged and remembered (#1159) (@jmrplens)
+  - 4ef4e1d: Answer a missing door permission uncharged (#1139) (@jmrplens)
+  - 219e7e0: Answer pipeline.latest from the ref GitLab was asked about when its head commit has no pipeline (#1252) (@jmrplens)
+  - 1dfe536: Answer the review of the documentation stack (#1196) (@jmrplens)
+  - ab63183: Ask GitLab for label counts where they are read, and publish only the counts it sent (#1217) (@jmrplens)
+  - 04630a4: Attest the NuGet packages, hold nuget.org to them, and say how to verify what each package runs (#1123) (@jmrplens)
+  - d274a25: Bring the site level with the HTTP, OAuth, token and security guides (#1186) (@jmrplens)
+  - d8b46ff: Bring the site level with the deployment, telemetry and sizing guides (#1187) (@jmrplens)
+  - 1696f0d: Bring the site level with the install, client and CI/CD guides (#1188) (@jmrplens)
+  - 7939917: Bring the site level with the reference and concept pages (#1189) (@jmrplens)
+  - 8fa69e1: Bring the upstream register to its state of 2026-10-06 (#1223) (@jmrplens)
+  - 6bc2c07: Bring the upstream register to its state on 2026-10-08 (#1259) (@jmrplens)
+  - 96db3f7: Bring the upstream register to its state on 2026-10-09 (#1264) (@jmrplens)
+  - e19b579: Bring the upstream register to the state of 2026-10-05 (#1178) (@jmrplens)
+  - ce4c7f3: Build the site on every change and hold its links and tables in CI (#1183) (@jmrplens)
+  - 39fcdb2: Bump client-go to v3.15.0 and retire the system hook capture (#1177) (@jmrplens)
+  - 97e22dd: Call the binary self-contained rather than static, and correct stale statements in llms-install.md and the Docker Hub page (#1263) (@jmrplens)
+  - d29641d: Check the release binaries again when releasing, hold the image, bundles and notices to the release, and correct the stack's documentation (#1127) (@jmrplens)
+  - dec3a09: Clear the 56 open SonarCloud findings on main (#1118) (@jmrplens)
+  - f4c169d: Close the condition and mutation gate of cmd/server, and gate the files only Windows and macOS build (#1206) (@jmrplens)
+  - c12f7bf: Cover gitlab-org/gitlab and the Hackathon in the upstream contribution skill (#1261) (@jmrplens)
+  - 7efa36f: Derive every action's requests and join them to the fine-grained permissions GitLab declares (#1143) (@jmrplens)
+  - aee74b3: Derive the classic scope each action needs and write it into the action grants table (#1244) (@jmrplens)
+  - 8153f1e: Describe the widened supply-chain rule 2 in the command reference (#1249) (@jmrplens)
+  - 0f36d89: Document fine-grained tokens (#1148) (@jmrplens)
+  - ae0d8c8: Document per-action token scopes and the read_api narrowing (#1248) (@jmrplens)
+  - bfee946: Fix what review found on the fine-grained stack: the collection flag, the spelling bound, an empty batch and SonarCloud's findings (#1152) (@jmrplens)
+  - a1a8fd3: Generate the per-domain tool reference from the action catalog (#1191) (@jmrplens)
+  - 2d0bcea: Give gitlab_achievement an icon of its own, and hold the icon map to every group the catalog builds (#1227) (@jmrplens)
+  - 9ec744b: Give the tools/call refusals a middleware makes the resultType 2026-07-28 requires (#1120) (@jmrplens)
+  - 3d49e5a: Go 1.27.2 and golang.org/x/net v0.60.0 for the 2026-10-08 security advisories (#1265) (@jmrplens)
+  - 868d84a: Hold every script, make target and secret a credentialed job reaches to the supply-chain rule (#1229) (@jmrplens)
+  - faa9328: Hold the fine-grained table to the live record in the 1:1 audit (R-GRANT) (#1144) (@jmrplens)
+  - cfa7040: Hold the read_api minimum to a real GitLab, on stdio and over HTTP (#1161) (@jmrplens)
+  - 9567ab7: Hold the read_api surface to GitLab's answers end to end (#1247) (@jmrplens)
+  - d638f9a: Keep the Premium board scope and list types off the Free schema, and grade parameter rows in audit_edition_tier (#1251) (@jmrplens)
+  - 75e7bbc: Keep the bench harness's dead endpoint on its port for the whole test (#1131) (@jmrplens)
+  - d662739: Key every board role and license hint on the refusal GitLab gives, and name the Planner role (#1226) (@jmrplens)
+  - 794517c: Launch Playwright's Chromium before reaching for apt in the site builds (#1257) (@jmrplens)
+  - 2a760f8: Let GITLAB_MCP_YOLO_MODE pass the dynamic surface's destructive gate (#1214) (@jmrplens)
+  - 7ca7575: Let GitLab judge an Orbit query and teach version 12 of its DSL (#1205) (@jmrplens)
+  - bc02ee4: List the registered tools once per registration, bound a registration under the race detector by its own budget, and dial closed listeners only outside the parallel phase (#1258) (@jmrplens)
+  - 52d53ac: Make every served resource and prompt description say what its handler reads, and refuse a malformed day count everywhere (#1228) (@jmrplens)
+  - 754bc28: Measure the condition gate on Windows, macOS and Linux on demand (#1211) (@jmrplens)
+  - 13afe46: Mint fine-grained tokens on the Docker instance and hold every surface to them (#1147) (@jmrplens)
+  - c6b3f61: Move six upstream register entries out of Other into their projects' sections (#1136) (@jmrplens)
+  - 7519408: Move the upstream-only issues into the upstream register, and record the GitLab merge requests opened on 2026-10-07 (#1254) (@jmrplens)
+  - 8c963af: Name a credential in the log by a keyed digest, and clear the open Sonar issues (#1220) (@jmrplens)
+  - fdc2ebb: Name the pagination total in the dispatch output schema total_items, as every REST list result writes it (#1215) (@jmrplens)
+  - 8305be8: Pin devalue past three advisories, and record why basic-ftp cannot be (#1135) (@jmrplens)
+  - 5e38633: Point every link into the retiring docs/ pages at the site (#1192) (@jmrplens)
+  - aa837be: Print each action's token requirements on its tool reference page (#1246) (@jmrplens)
+  - 8b425d5: Publish one Claude Desktop bundle per operating system (#1124) (@jmrplens)
+  - fbf81ff: Publish the approval state every Enterprise build answers the approvals routes with (#1201) (@jmrplens)
+  - fd4b341: Publish the default surface's startup totals and reach on the site (#1184) (@jmrplens)
+  - e5713bb: Quote the permission GitLab says a fine-grained token lacks, and stop the stdio version loop (#1140) (@jmrplens)
+  - 7bf08aa: Raise the bound on GitLab's reflected message to 2048 bytes (#1204) (@jmrplens)
+  - 44fddee: Read a fine-grained token as unknown authority (#1138) (@jmrplens)
+  - 394a824: Read a reaped launcher test process as gone instead of failing (#1198) (@jmrplens)
+  - c395713: Read merge_request.commits and search.commits from the captured response (#1200) (@jmrplens)
+  - 9c83df3: Recognize a Codex client on stateless HTTP by its User-Agent (#1199) (@jmrplens)
+  - dcb611c: Record fine-grained authorization in the live GitLab record (schema 4) (#1141) (@jmrplens)
+  - 66a032f: Record the merge requests opened for register rows 24, 86 and 89, and refresh the top of the stack (#1207) (@jmrplens)
+  - 9f38e91: Record the register's documentation merge requests as they stand on 2026-10-04 (#1153) (@jmrplens)
+  - 7204974: Record the site as the only home of user documentation (#1193) (@jmrplens)
+  - edbd858: Record the tier's Free fallback as INV-008's exception (#1158) (@jmrplens)
+  - 072520b: Record the upstream gaps fine-grained tokens run into, as register rows 82 to 85 (#1117) (@jmrplens)
+  - f73f440: Record the upstream state of 2026-10-02 in the register, with row 92 for the moved-project 405 (#1134) (@jmrplens)
+  - cdf6d85: Record why http-cache-semantics cannot be pinned for the site audit (#1151) (@jmrplens)
+  - 9b36bb3: Refuse every stdio catalog request for a token below the read_api minimum (#1160) (@jmrplens)
+  - 8e81e47: Regenerate the committed artifacts on the stacked tree (#1195) (@jmrplens)
+  - a9323d3: Regenerate the fine-grained stack's artifacts at its top, and hold it to complete runs on both editions (#1149) (@jmrplens)
+  - 78703ea: Remove the README statistics, cmd/gen_stats and the check-stats gate (#1182) (@jmrplens)
+  - 06db62b: Reproduce the license files nested in linked packages in THIRD_PARTY_NOTICES (#1154) (@jmrplens)
+  - a6c4250: Retire the docs/ copies of the user documentation (#1194) (@jmrplens)
+  - f494039: Rewrite the README as a short front door (#1185) (@jmrplens)
+  - bee3123: Run komac pinned and hash-checked in the winget job, and open every action a step names in the supply-chain audit (#1253) (@jmrplens)
+  - 615f547: Run the e2e GitLab with four Puma workers and cap it at 12 GiB (#1157) (@jmrplens)
+  - b7f46d4: Say what the global merge request and issue lists answer when scope is omitted (#1216) (@jmrplens)
+  - 6d10909: Send scope=all on the prompts' global merge request and issue lists (#1173) (@jmrplens)
+  - 163a176: Serve a fine-grained token only what its grant reaches (phase B) (#1146) (@jmrplens)
+  - 6462c8f: Serve a read_api token the actions GitLab accepts from it (#1245) (@jmrplens)
+  - 723be9b: Share one handler resolver and one client-go route reader, and move the readonly audit and R-PATH onto them (#1142) (@jmrplens)
+  - 7cc3437: Ship the licence text and third-party notices in every package, pin the ELF loader, and correct the registry's descriptions (#1125) (@jmrplens)
+  - 5cbacf9: Speak only of label_id when a group board list create is refused, and key its role hint on the refusal (#1218) (@jmrplens)
+  - 64136db: Stop shipping golang.org/x/crypto, gate the release binaries at module grain, and record the version in the image binary (#1122) (@jmrplens)
+  - 09551c7: Stop the server with the npm launcher, and show one call in each dynamic tool's description (#1126) (@jmrplens)
+  - 2d5d142: Take gqlparser to v2.5.58 (#1119) (@jmrplens)
+  - d3d7f60: Take source-map-js 1.2.2 in the site's lockfile (#1203) (@jmrplens)
+  - bf1fc5b: Wait out nuget.org's validation in the published-package check (#1230) (@jmrplens)
+  - 8ade75f: Withhold from a fine-grained session what no fine-grained token can reach (phase A) (#1145) (@jmrplens)
+  - d7612c8: Write the generated references into the site and retarget their tests (#1190) (@jmrplens)
+ReleaseNotesUrl: https://github.com/jmrplens/gitlab-mcp-server/releases/tag/v3.2.0
+Documentations:
+- DocumentLabel: Documentation
+  DocumentUrl: https://jmrp.io/docs/gitlab-mcp-server/
+ManifestType: defaultLocale
+ManifestVersion: 1.12.0
